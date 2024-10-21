@@ -1,0 +1,28 @@
+tag:
+  - dstport
+  - protocol
+output:
+  - tag,count
+  - dstport,protocol,count
+keys:
+   - version
+   - account-id
+   - interface-id
+   - srcaddr
+   - dstaddr
+   - dstport
+   - srcport
+   - protocol
+   - packets
+   - bytes
+   - start
+   - end
+   - action
+   - log-status
+protocols:
+  tcp: 6
+  udp: 17
+  icmp: 1
+files:
+  lookup_table_file: lookup_table.txt
+  log_data: logs.txt
