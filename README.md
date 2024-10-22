@@ -60,6 +60,11 @@ Application is splitted into 4 parts
     443,tcp,1
     ```
 
+Summary:
+   - This is one pass parsing implementation that takes O(N) time (amortized, constants dropped, N is number of lines).
+   - Log file reading is done as a stream, line by line. Then sparse graph is created and takes O(V+E) memory (V: protocls, E:edges between protocls and ports)
+   - Graph processing is done with O(V+E) time complexity (V: protocls, E: edges between protocls and ports)
+
 Dependencies: Logger and Yaml libraries.
 
 Local setup (my setup is based on Arch linux 6.11.4-arch2-1):
