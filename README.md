@@ -1,4 +1,4 @@
-Application is splitted into 3 parts
+Application is splitted into 4 parts
 
 1. Configuration setup: based on yaml file https://github.com/jurikern/mapper/blob/master/src/main/resources/config.yaml
    - Defines file names for lookup table and logs. 
@@ -41,7 +41,7 @@ Application is splitted into 3 parts
     ```
   - Abstract syntax tree is created with the help of Lexer: https://github.com/jurikern/mapper/blob/master/src/main/java/jkern/mapper/lexer/Lexer.java and Parser: https://github.com/jurikern/mapper/blob/master/src/main/java/jkern/mapper/parser/V2ParserImpl.java (V2 implementation)
   - Reason: Abstract syntax tree is widely used for interpretators/compilers implementation and makes parsing extendable and readable
-3. Mapper initialized. https://github.com/jurikern/mapper/blob/master/src/main/java/jkern/mapper/Mapper.java
+4. Mapper initialized. https://github.com/jurikern/mapper/blob/master/src/main/java/jkern/mapper/Mapper.java
    - Mapper reads lines as a buffered stream from log file.
    - Mapper initializes processing graph that describes edges in format of (PROTOCOL) -> (PORT, TAG). Means that file is parsed only once and all calculations would be done based on graph data.
    - Mapper converts each line into syntax tree, analyzes and adds values into processing graph
@@ -59,6 +59,8 @@ Application is splitted into 3 parts
     25,tcp,1
     443,tcp,1
     ```
+
+Dependencies: Logger and Yaml libraries.
 
 Local setup (my setup is based on Arch linux 6.11.4-arch2-1):
 
